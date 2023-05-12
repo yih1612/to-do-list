@@ -1,23 +1,26 @@
 import React from "react";
-import { BsTrash } from "react-icons/bs";
+import { FaTrashAlt } from "react-icons/fa";
 
-export default function Todo({ todos, onDelete }) {
-  const handleClick = (e) => {
-    console.log(e);
+export default function Todo({ todo, onUpdate, onDelete }) {
+  const { text, status } = todo;
+  const handleChange = (e) => {
+    console.log(e.target);
+    const status = e.target.checked ? "completed" : "active";
+    onUpdate({ ...todo, status });
   };
+  const handleDelete = () => onDelete(todo);
   return (
-    <div>
-      <ul>
-        {todos.map((item) => (
-          <li key={item.id}>
-            <input type="checkbox" />
-            {item.text}
-            <button onClick={handleClick}>
-              <BsTrash />
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <li>
+      <input
+        type="checkbox"
+        id="checkbox"
+        checked={status === "completed"}
+        onChange={handleChange}
+      />
+      <label htmlFor="checkbox">{text}</label>
+      <button onClick={handleDelete}>
+        <FaTrashAlt />
+      </button>
+    </li>
   );
 }
