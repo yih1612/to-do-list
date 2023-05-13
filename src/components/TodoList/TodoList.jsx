@@ -16,21 +16,19 @@ export default function TodoList({ filter }) {
 
   const filtered = getFilteredItems(todos, filter);
   return (
-    <div>
-      <section>
-        <ul>
-          {filtered.map((item) => (
-            <Todo
-              key={item.id}
-              todo={item}
-              onUpdate={handleUpdate}
-              onDelete={handleDelete}
-            />
-          ))}
-        </ul>
-        <AddTodo onAdd={handleAdd} />
-      </section>
-    </div>
+    <section>
+      <ul>
+        {filtered.map((item) => (
+          <Todo
+            key={item.id}
+            todo={item}
+            onUpdate={handleUpdate}
+            onDelete={handleDelete}
+          />
+        ))}
+      </ul>
+      <AddTodo onAdd={handleAdd} />
+    </section>
   );
 }
 
