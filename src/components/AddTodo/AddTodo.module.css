@@ -1,8 +1,12 @@
 .form {
+  /* flex: 1; */
   display: flex;
   width: 100%;
   padding: 1.4rem 1rem;
   background-color: var(--color-bg-dark);
+}
+.form_dark {
+  background-color: var(--color-dark-bg);
 }
 
 .input {
