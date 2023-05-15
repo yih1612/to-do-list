@@ -18,7 +18,7 @@ export default function Header({ filters, filter, onFilterChange }) {
             <button
               className={`${styles.filter} ${
                 filter === value && styles.selected
-              }`}
+              } ${darkMode === true && styles.selected_dark}`}
               onClick={() => onFilterChange(value)}
             >
               {value}
