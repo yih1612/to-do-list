@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./AddTodo.module.css";
-import { DarkModeContext } from "../../context/DarkModeContext";
+import { useDarkmode } from "../../context/DarkModeContext";
 
 export default function AddTodo({ onAdd }) {
   const [text, setText] = useState("");
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode } = useDarkmode();
   const handleChange = (e) => setText(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();

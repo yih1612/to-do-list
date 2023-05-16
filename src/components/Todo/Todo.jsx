@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import styles from "./Todo.module.css";
-import { DarkModeContext } from "../../context/DarkModeContext";
+import { useDarkmode } from "../../context/DarkModeContext";
 
 export default function Todo({ todo, onUpdate, onDelete }) {
   const { text, status } = todo;
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode } = useDarkmode();
   const handleChange = (e) => {
     console.log(e.target);
     const status = e.target.checked ? "completed" : "active";
