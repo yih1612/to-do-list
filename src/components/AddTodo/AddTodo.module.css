@@ -5,9 +5,6 @@
   padding: 1.4rem 1rem;
   background-color: var(--color-bg-dark);
 }
-.form_dark {
-  background-color: var(--color-dark-bg);
-}
 
 .input {
   flex: 1 0 auto;

@@ -6,9 +6,7 @@ import { useDarkmode } from "../../context/DarkModeContext";
 export default function Header({ filters, filter, onFilterChange }) {
   const { darkMode, toggleDarkMode } = useDarkmode();
   return (
-    <header
-      className={`${styles.header} ${darkMode === true && styles.header_dark}`}
-    >
+    <header className={styles.header}>
       <button className={styles.icon} onClick={toggleDarkMode}>
         {darkMode ? <HiSun /> : <HiMoon />}
       </button>
@@ -18,7 +16,7 @@ export default function Header({ filters, filter, onFilterChange }) {
             <button
               className={`${styles.filter} ${
                 filter === value && styles.selected
-              } ${darkMode === true && styles.selected_dark}`}
+              }`}
               onClick={() => onFilterChange(value)}
             >
               {value}

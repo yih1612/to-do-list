@@ -6,9 +6,6 @@
   min-height: 0;
   background-color: var(--color-bg);
 }
-.container_dark {
-  background-color: var(--color-dark-bg-bright);
-}
 
 .list {
   /* list 꽉차게 */
