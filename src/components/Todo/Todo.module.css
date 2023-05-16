@@ -35,3 +35,8 @@
   color: var(--color-text);
   background-color: transparent;
 }
+
+.checked {
+  color: var(--color-under);
+  text-decoration-line: line-through;
+}
